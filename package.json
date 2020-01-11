@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Repository for a [Medium article](https://medium.com/@bornasepic98/pure-and-simple-tic-tac-toe-424156b8f71e)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BornaSepic/Tic-Tac-Toe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BornaSepic/Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/BornaSepic/Tic-Tac-Toe#readme",
+  "devDependencies": {
+    "typescript": "^3.7.4"
+  }
+}
