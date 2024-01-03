@@ -52,6 +52,7 @@ jobs:
 
   UnitTest:
     runs-on: ubuntu-latest
+    needs: ["flake8StyleCheck", "editorconfigStyleCheck", "makrdownlintStyleCheck"]
 
     steps:
       - name: Checkout code
