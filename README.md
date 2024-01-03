@@ -1,7 +1,8 @@
 # Final Project
 
 The application I am working with is a simple Tic Tac Toe Game web-based
-application that i got from [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe) repository. This project uses some of the DevOps practices we've leaned
+application that i got from [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe)
+repository. This project uses some of the DevOps practices we've leaned
 to build a complete automated software delivery process with pipelines.
 
 ## Used Practices
