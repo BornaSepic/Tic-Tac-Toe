@@ -20,9 +20,9 @@ deploy code changes to staging or production environments after
 successful Cl
 - Security: security practices are embeded throughout the pipeline,
 automated tests are run whenever code changes are pushed to the repository
-- Docker: the application is containerized using Docker, Dockerfile is 
+- Docker: the application is containerized using Docker, Dockerfile is
 used to define the application's dependencies and runtime environment
-- Kubernetes: the containerized application is deplyed to a Kubernetes 
+- Kubernetes: the containerized application is deplyed to a Kubernetes
 cluster
 
 ## Additional Information
