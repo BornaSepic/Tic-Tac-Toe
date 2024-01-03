@@ -77,10 +77,10 @@ check to be completed.
   SDLC phase: Testing Phase
 - Security: integrate static code analysis (SAST) tools into the Cl pipeline
 
-  This includes using SAST tools for static code analysis, incorporating security
-checks in the build and deployment stages, and regularly updating dependencies
-to patch vulnerabilities. Security should be a continuous consideration
-throughout the SDLC.
+  This includes using SAST tools for static code analysis. I implemented in
+the workflow thebfollowing security checks: gitleaks for hardcoded secrets,
+SonarCloudScan and SnykScan. For SonarCloudScan and SnykScan I created tokens,
+as variables to grant access.
 
   SDLC phase: Implementation and Testing Phase
 
