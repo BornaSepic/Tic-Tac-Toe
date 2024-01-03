@@ -1,7 +1,7 @@
 # Final Project
 
 The application I am working with is a simple Tic Tac Toe Game web-based
-application. This project uses some of the DevOps practices we've leaned
+application that i got from [Tic-Tac-Toe](https://github.com/BornaSepic/Tic-Tac-Toe) repository. This project uses some of the DevOps practices we've leaned
 to build a complete automated software delivery process with pipelines.
 
 ## Used Practices
@@ -60,15 +60,15 @@ develop branch and started to work there.
 - Style Checks: execute checks that are intended to enforce a consistent
 coding style across the project
 
-  The process of the Style checks included adding licence and .editorconfig,
-and then executing flake8, editorconfig-checker and mardownlint-cli. After
-fixing the inconcictency of the files, I started my workflow pipeline with
-these three checks.
+  The process of the Style checks included adding licence, contributing gile
+and .editorconfig, and then executing flake8, editorconfig-checker and
+mardownlint-cli. After fixing the inconcictency of the files, I started my
+workflow pipeline with these three checks.
 
   SDLC phase: Implementation and Testing Phase
 - Testing: execute unit tests to ensure that the application logic is correct
 
-  I executes a few unit tests to see if the functions in the source code are
+  I executed a few unit tests to see if the functions in the source code are
 working as intended. When the unit tests were done and successfully executed,
 I added them as the next step in the pipeline that first waits the style
 check to be completed.
