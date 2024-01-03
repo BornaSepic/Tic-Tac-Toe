@@ -98,3 +98,21 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  SnykScanCheck:
+    runs-on: ubuntu-latest
+    needs: ["flake8StyleCheck", "editorconfigStyleCheck", "makrdownlintStyleCheck"]
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Install dependecies
+      run: |
+        npm install -g snyk@latest
+        pip install -r src/requirements.txt
+
+    - name: Snyk scan
+      run: snyk test --all-projects
+      env:
+        SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
