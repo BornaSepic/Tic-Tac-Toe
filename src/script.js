@@ -8,7 +8,9 @@ const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
-statusDisplay.innerHTML = currentPlayerTurn();
+if (statusDisplay) {
+  statusDisplay.innerHTML = currentPlayerTurn();
+}
 
 const winningConditions = [
     [0, 1, 2],
@@ -87,8 +89,16 @@ document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click'
 document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
 
 module.exports = {
+  statusDisplay,
+  winningMessage,
+  drawMessage,
+  currentPlayerTurn,
   handleCellPlayed,
   handlePlayerChange,
   handleResultValidation,
   handleRestartGame,
+  handleCellClick,
+  gameActive,
+  gameState,
+  currentPlayer
 };

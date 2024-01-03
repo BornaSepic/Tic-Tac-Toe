@@ -4,9 +4,13 @@
   "description": "The application I am working with is a simple Tic Tac Toe Game web-based application. This project uses some of the DevOps practices we've leaned to build a complete automated software delivery process with pipelines.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jsdom": "^23.0.1"
+  }
 }
