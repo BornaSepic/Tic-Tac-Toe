@@ -37,27 +37,27 @@ horizontal + at least one deep dive vertical
 ## Process
 
 - Project Planning: understand the requirements and expectations, create
-a project plan, choose which practices to include in my project
+a project plan, choose which practices to include in the project
 
   The practices that are included in the solution of the project are:
 Phases of SDLC, Source control, Branching strategies, Building Pipelines,
 Continuous Integration, Continuous Delivery, Security, Docker, Kubernetes.
 
-  SDLC phase: planning phase
+  SDLC phase: Planning phase
 - Source control: set up a Git repository for the project
 
   This repository is set up by forking the repository with the Tic Tac Toe
 application sorce code.
 
-  SDLC phase: planning phase
-- Branching strategies: choose a branching strategy that fits my project
+  SDLC phase: Planning phase
+- Branching strategies: choose a branching strategy that fits the project
 
   I chose to have one branch for developing the automated software delivery
 process, and merge it to the main branch when needed. So I created the
 develop branch and started to work there.
 
-  SDLC phase: planning phase
-- Style Checks: make a few checks that are intended to enforce a consistent
+  SDLC phase: Planning phase
+- Style Checks: execute checks that are intended to enforce a consistent
 coding style across the project
 
   The process of the Style checks included adding licence and .editorconfig,
@@ -68,15 +68,15 @@ these three checks.
   SDLC phase: Implementation and Testing Phase
 - Testing: execute unit tests to ensure that the application logic is correct
 
-  I executes a few unit tests to see that the funstions in the source code are
-working as intended. When the unit tests were done and successfully executes,
-I added them to the pipeline.
+  I executes a few unit tests to see if the functions in the source code are
+working as intended. When the unit tests were done and successfully executed,
+I added them as the next step in the pipeline that first waits the style
+check to be completed.
 
   SDLC phase: Testing Phase
-
 - Security: integrate static code analysis (SAST) tools into the Cl pipeline
 
-This includes using SAST tools for static code analysis, incorporating security
+  This includes using SAST tools for static code analysis, incorporating security
 checks in the build and deployment stages, and regularly updating dependencies
 to patch vulnerabilities. Security should be a continuous consideration
 throughout the SDLC.
@@ -90,7 +90,7 @@ the Docker image locally, and then itegrate it to the pipeline
 
 - Kubernetes: set up a Kubernetes cluster (local or on a cloud provider).
 
-Write Kubernetes manifests (YAML files) to define your application deployment.
+  Write Kubernetes manifests (YAML files) to define your application deployment.
 Define Kubernetes manifests (YAML files) to specify how your application should
 run, scale, and connect to other services. Use Kubernetes for orchestration and
 management of containerized applications.
