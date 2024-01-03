@@ -110,7 +110,6 @@ jobs:
     - name: Install dependecies
       run: |
         npm install -g snyk@latest
-        pip install -r src/requirements.txt
 
     - name: Snyk scan
       run: snyk test --all-projects
