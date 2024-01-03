@@ -1,5 +1,8 @@
 jest.mock('./script.js', () => {
+  const originalModule = jest.requireActual('./script.js');
+
   return {
+    ...originalModule,
     document: {
       querySelector: jest.fn(),
     },
