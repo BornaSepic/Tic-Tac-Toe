@@ -1,13 +1,13 @@
-jest.mock('./script.js', () => {
-  const originalModule = jest.requireActual('./script.js');
+global.TextEncoder = require('util').TextEncoder;
+global.TextDecoder = require('util').TextDecoder;
 
-  return {
-    ...originalModule,
-    document: {
-      querySelector: jest.fn(),
-    },
-  };
-});
+const { JSDOM } = require('jsdom');
+const fs = require('fs');
+
+const html = fs.readFileSync('./src/index.html', 'utf-8');
+
+const dom = new JSDOM(html);
+global.document = dom.window.document;
 
 const {
   handleCellPlayed,

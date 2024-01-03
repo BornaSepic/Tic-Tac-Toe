@@ -50,6 +50,6 @@ develop branch and started to work there.
 coding style across the project
   The process of the Style checks included adding licence and .editorconfig,
 and then executing flake8, editorconfig-checker and mardownlint-cli. After
-fixing the inconcictency of the files, I started my workflow pipeline with 
+fixing the inconcictency of the files, I started my workflow pipeline with
 these three checks.
   SDLC phase: Implementation and Testing Phase
