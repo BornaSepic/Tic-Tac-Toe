@@ -1,65 +1,65 @@
-global.TextEncoder = require('util').TextEncoder;
-global.TextDecoder = require('util').TextDecoder;
-
-const { JSDOM } = require('jsdom');
-const fs = require('fs');
-
-const html = fs.readFileSync('./src/index.html', 'utf-8');
-
-const dom = new JSDOM(html);
-global.document = dom.window.document;
-
 const {
   handleCellPlayed,
   handlePlayerChange,
   handleResultValidation,
   handleRestartGame,
-} = require('./script.js');
+} = require('./script');
 
-test('handleCellPlayed updates gameState and cell content', () => {
-  const gameState = ["", "", "", "", "", "", "", "", ""];
-  const clickedCellIndex = 0;
+describe('Tic Tac Toe Game', () => {
+  beforeEach(() => {
+    // Set up a clean slate for each test
+    gameActive = true;
+    currentPlayer = "X";
+    gameState = ["", "", "", "", "", "", "", "", ""];
+    statusDisplay.innerHTML = currentPlayerTurn();
+  });
 
-  handleCellPlayed({ innerHTML: '' }, clickedCellIndex);
+  test('should handle cell played', () => {
+    const clickedCell = document.createElement('div');
+    const clickedCellIndex = 0;
+    handleCellPlayed(clickedCell, clickedCellIndex);
 
-  expect(gameState[clickedCellIndex]).toBe("X");
-});
+    expect(gameState[clickedCellIndex]).toBe("X");
+    expect(clickedCell.innerHTML).toBe("X");
+  });
 
-test('handlePlayerChange switches the currentPlayer', () => {
-  let currentPlayer = "X";
+  test('should handle player change', () => {
+    handlePlayerChange();
+    expect(currentPlayer).toBe("O");
+    expect(statusDisplay.innerHTML).toBe("It's O's turn");
+  });
 
-  handlePlayerChange();
+  test('should handle result validation - player wins', () => {
+    // Simulate a winning condition
+    gameState = ["X", "X", "X", "", "", "", "", "", ""];
+    handleResultValidation();
 
-  expect(currentPlayer).toBe("O");
-});
+    expect(gameActive).toBe(false);
+    expect(statusDisplay.innerHTML).toBe("Player X has won!");
+  });
 
-test('handleResultValidation ends the game if a player wins', () => {
-  const gameState = ["X", "X", "X", "", "", "", "", "", ""];
+  test('should handle result validation - draw', () => {
+    // Simulate a draw condition
+    gameState = ["X", "O", "X", "O", "X", "O", "O", "X", "X"];
+    handleResultValidation();
 
-  const result = handleResultValidation(gameState);
+    expect(gameActive).toBe(false);
+    expect(statusDisplay.innerHTML).toBe("Game ended in a draw!");
+  });
 
-  expect(result).toBe("Player X has won!");
-});
+  test('should handle restarting the game', () => {
+    // Simulate a played game
+    gameState = ["X", "O", "X", "O", "X", "O", "O", "X", "X"];
+    handleResultValidation();
+    handleRestartGame();
 
-test('handleResultValidation ends the game in a draw', () => {
-  const gameState = ["X", "O", "X", "O", "X", "O", "O", "X", "X"];
-
-  const result = handleResultValidation(gameState);
-
-  expect(result).toBe("Game ended in a draw!");
-});
-
-test('handleRestartGame resets the game state', () => {
-  const initialState = {
-    gameActive: false,
-    currentPlayer: "O",
-    gameState: ["X", "O", "", "", "", "", "", "", ""],
-  };
-
-  handleRestartGame();
-
-  expect(gameActive).toBe(true);
-  expect(currentPlayer).toBe("X");
-  expect(gameState).toEqual(["", "", "", "", "", "", "", "", ""]);
+    expect(gameActive).toBe(true);
+    expect(currentPlayer).toBe("X");
+    expect(gameState).toEqual(["", "", "", "", "", "", "", "", ""]);
+    expect(statusDisplay.innerHTML).toBe("It's X's turn");
+    document.querySelectorAll('.cell').forEach(cell => {
+      expect(cell.innerHTML).toBe("");
+    });
+  });
 });
 

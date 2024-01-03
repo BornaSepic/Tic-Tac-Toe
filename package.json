@@ -2,13 +2,9 @@
   "name": "modern-devops-practices-project",
   "version": "1.0.0",
   "description": "The application I am working with is a simple Tic Tac Toe Game web-based application. This project uses some of the DevOps practices we've leaned to build a complete automated software delivery process with pipelines.",
-  "main": "src/script.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
-  },
-  "devDependencies": {
-    "jest": "^27.5.1",
-    "jsdom": "^23.0.1"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
