@@ -43,5 +43,13 @@ application sorce code.
   SDLC phase: planning phase
 - Branching strategies: choose a branching strategy that fits my project
   I chose to have one branch for developing the automated software delivery
-process, and merge it to the main branch when needed.
+process, and merge it to the main branch when needed. So I created the
+develop branch and started to work there.
   SDLC phase: planning phase
+- Style Checks: make a few checks that are intended to enforce a consistent
+coding style across the project
+  The process of the Style checks included adding licence and .editorconfig,
+and then executing flake8, editorconfig-checker and mardownlint-cli. After
+fixing the inconcictency of the files, I started my workflow pipeline with 
+these three checks.
+  SDLC phase: Implementation and Testing Phase
