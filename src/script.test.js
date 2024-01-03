@@ -32,7 +32,7 @@ describe('Tic Tac Toe Game', () => {
   test('Should handle cell played', () => {
     clickCell(0)
     const initialPlayer = currentPlayer;
-  
+
     expect(gameState[0]).toBe(initialPlayer);
     expect(statusDisplay.innerHTML).toBe(currentPlayerTurn());
   });
